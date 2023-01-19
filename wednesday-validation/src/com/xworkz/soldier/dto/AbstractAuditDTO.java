@@ -14,7 +14,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-public abstract class AbstractAuidDTO implements Serializable{
+public abstract class AbstractAuditDTO implements Serializable{
 
 	private String createdBy;
 	private LocalDate createdDate;

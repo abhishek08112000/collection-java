@@ -1,6 +1,7 @@
 package com.xworkz.soldier.boot;
 
 import com.xworkz.soldier.dto.SoldierDTO;
+import com.xworkz.soldier.repo.RepoSoldierImpl;
 import com.xworkz.soldier.repo.RepoSoldiers;
 import com.xworkz.soldier.service.SoldierServiceImpl;
 
@@ -13,9 +14,8 @@ public class SoldierRunner {
 		System.out.println(soldier);
 		
 		SoldierServiceImpl serImpl = new SoldierServiceImpl();
+		RepoSoldiers repo = new RepoSoldierImpl();
+		serImpl.setRepoSoldier(repo);
 		serImpl.validateAndSave(soldier);
-		
-		
-		
 	}
 }

@@ -13,13 +13,11 @@ import com.xworkz.soldier.repo.RepoSoldiers;
 
 public class SoldierServiceImpl implements SoldierService{
 
-	private RepoSoldierImpl repoSoldier;
+	private RepoSoldiers repoSoldier;
 	
-	public SoldierServiceImpl(RepoSoldierImpl repoSoldier) {
-		this.repoSoldier = repoSoldier;
-	}
 	
-	public void setRepoSoldier(RepoSoldierImpl repoSoldier) {
+	
+	public void setRepoSoldier(RepoSoldiers repoSoldier) {
 		this.repoSoldier = repoSoldier;
 	}
 	
@@ -38,13 +36,12 @@ public class SoldierServiceImpl implements SoldierService{
 		}
 		else {
 			System.out.println("Validation done");
-			RepoSoldierImpl reff = (RepoSoldierImpl) repoSoldier.save(dto);
 			
-			
-			System.out.println("Save dto "+ dto);
-			violation.forEach(d->System.out.println(d.getMessage()));
+			 boolean save1 =repoSoldier.save(dto);
+			 System.out.println("dto saved using repo "+ save1);
+			 return save1;
 		}
-		return false;
+		
 		
 	}
 }

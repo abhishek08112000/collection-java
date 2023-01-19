@@ -4,5 +4,5 @@ import com.xworkz.soldier.dto.SoldierDTO;
 
 public interface RepoSoldiers {
 
-	public RepoSoldiers save(SoldierDTO dto);
+	public boolean save(SoldierDTO dto);
 }
